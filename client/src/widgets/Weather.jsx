@@ -26,7 +26,7 @@ function Weather(props) {
   useEffect(() => {
     if (props.id === undefined) return
 
-    const auxCity2 = JSON.parse(localStorage.getItem('0'))
+    const auxCity2 = JSON.parse(localStorage.getItem(props.id))
     if (auxCity2) {
       setCity(auxCity2)
     }
@@ -34,7 +34,7 @@ function Weather(props) {
 
   useEffect(() => {
     if (city === '') return
-    localStorage.setItem(props.id, JSON.stringify(auxCity))
+    localStorage.setItem(props.id, JSON.stringify(city))
     setOpen(false)
     clearInterval(intervalRef)
     fetchInterval()

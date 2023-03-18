@@ -23,10 +23,10 @@ function App() {
   const [widget, setWidget] = useState('')
 
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('items'))
-    if (items) {
-      setItems(items)
-      setCounter(items[items.length - 1].i + 1)
+    const auxItems = JSON.parse(localStorage.getItem('items'))
+    if (auxItems && auxItems.length !== 0) {
+      setItems(auxItems)
+      setCounter(auxItems[auxItems.length - 1].i + 1)
     }
   }, [])
 
