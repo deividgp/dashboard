@@ -92,6 +92,7 @@ function App() {
       'items',
       JSON.stringify(items.filter((item) => item.i !== i))
     )
+    localStorage.removeItem(i)
   }
 
   const clearStorage = () => {
