@@ -9,6 +9,8 @@ import '../node_modules/react-grid-layout/css/styles.css'
 import '../node_modules/react-resizable/css/styles.css'
 import './App.css'
 import Weather from './widgets/Weather'
+import YoutubeSubscribers from './widgets/YoutubeSubscribers'
+import YoutubeLikes from './widgets/YoutubeLikes'
 const ResponsiveReactGridLayout = WidthProvider(Responsive)
 const removeStyle = {
   position: 'absolute',
@@ -38,6 +40,10 @@ function App() {
     switch (el.widget) {
       case 'weather':
         return <Weather id={el.i} />
+      case 'youtubesubs':
+        return <YoutubeSubscribers id={el.i} />
+      case 'youtubelikes':
+        return <YoutubeLikes id={el.i} />
     }
   }
 
@@ -102,7 +108,7 @@ function App() {
   return (
     <>
       <Button onClick={clearStorage}>Clear local storage</Button>
-      <Box sx={{ width: 120 }}>
+      <Box sx={{ width: 150 }}>
         <FormControl fullWidth>
           <InputLabel id='demo-simple-select-label'>Widget</InputLabel>
           <Select
@@ -113,6 +119,8 @@ function App() {
             onChange={handleSelectChange}
           >
             <MenuItem value='weather'>Weather</MenuItem>
+            <MenuItem value='youtubesubs'>YT subscribers</MenuItem>
+            <MenuItem value='youtubelikes'>YT likes</MenuItem>
           </Select>
         </FormControl>
       </Box>
