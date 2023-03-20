@@ -50,7 +50,7 @@ function Weather(props) {
     fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=' + city, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': import.meta.env.RAPIDAPI_KEY,
+        'X-RapidAPI-Key': import.meta.env.VITE_RAPIDAPI_KEY,
         'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
       }
     })
