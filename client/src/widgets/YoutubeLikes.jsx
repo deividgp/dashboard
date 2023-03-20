@@ -50,8 +50,7 @@ function YoutubeLikes(props) {
       {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key':
-            '4ba3df7148msh60f245f710ad9cfp13627bjsnf58013f30f59',
+          'X-RapidAPI-Key': import.meta.env.RAPIDAPI_KEY,
           'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
         }
       }
